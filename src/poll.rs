@@ -2313,6 +2313,7 @@ impl ReadinessQueueInner {
     /// Prepend the given node to the head of the readiness queue. This is done
     /// with relaxed ordering. Returns true if `Poll` needs to be woken up.
     fn enqueue_node_with_wakeup(&self, node: &ReadinessNode) -> io::Result<()> {
+        // panic!("hi from mio");
         if self.enqueue_node(node) {
             self.wakeup()?;
         } else {
