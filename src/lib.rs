@@ -2,7 +2,6 @@
 // Mio targets old versions of the Rust compiler. In order to do this, uses
 // deprecated APIs.
 #![allow(bare_trait_objects, deprecated, unknown_lints)]
-#![deny(missing_docs, missing_debug_implementations)]
 #![cfg_attr(test, deny(warnings))]
 
 // Many of mio's public methods violate this lint, but they can't be fixed
@@ -135,7 +134,8 @@ extern crate log;
 mod event_imp;
 mod io;
 mod poll;
-mod sys;
+/// fuck off
+pub mod sys;
 mod token;
 mod lazycell;
 

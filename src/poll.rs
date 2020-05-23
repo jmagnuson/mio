@@ -2315,6 +2315,9 @@ impl ReadinessQueueInner {
     fn enqueue_node_with_wakeup(&self, node: &ReadinessNode) -> io::Result<()> {
         if self.enqueue_node(node) {
             self.wakeup()?;
+        } else {
+            // WHAT UP
+            self.wakeup()?;
         }
 
         Ok(())
